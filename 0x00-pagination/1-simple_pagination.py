@@ -39,7 +39,7 @@ class Server:
         assert isinstance(
             page, int) and page > 0, "Value must be a positive integer"
         assert isinstance(
-            page_size, int) and page_size > 0, "Value must be a positive integer"
+            page_size, int) and page_size > 0, "Value must a positive int"
 
         self.dataset()
 
