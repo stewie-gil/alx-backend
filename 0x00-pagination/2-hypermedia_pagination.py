@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-""" using pagination by utilizing index range.
+"""using pagination by utilizing index range.
 
-this module contains the Server class"""
+this module contains ;2the Server class"""
 
 
 from typing import Tuple, List
@@ -55,20 +55,24 @@ class Server:
         """ returns page_size, page, """
         dictionary = {}
 
-        returned = self.get_page()
+        returned = self.get_page(page, page_size)
 
         start, end = index_range(page, page_size)
 
-        if end < len(returned):
+        if len(returned) != 0:
             dictionary["page_size"] = page_size
         else:
             dictionary["page_size"] = 0
 
         dictionary["page"] = page
 
+    
+
         total_items = len(self.dataset())
 
         total_pages = total_items / page_size
+
+        
 
         if (page + 1) <= total_pages:
             next_page = page + 1
