@@ -59,20 +59,13 @@ class Server:
 
         start, end = index_range(page, page_size)
 
-        if len(returned) != 0:
-            dictionary["page_size"] = page_size
-        else:
-            dictionary["page_size"] = 0
+        dictionary["page_size"] = len(returned)
 
         dictionary["page"] = page
-
-    
 
         total_items = len(self.dataset())
 
         total_pages = total_items / page_size
-
-        
 
         if (page + 1) <= total_pages:
             next_page = page + 1
