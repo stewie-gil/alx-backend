@@ -16,7 +16,7 @@ class BasicCache(BaseCaching):
 #        """ initializing base_caching"""
         #super().__init__()
 
-    def put(self, key, item):
+    def put(self, key=None, item=None):
         """
         Stores key value in self.cache_data
         Args: key - key for self.cache_data dict
@@ -24,7 +24,7 @@ class BasicCache(BaseCaching):
         """
         if key is not None or item is not None:
             data = {key: item}
-            self.cache_data.update(data)
+            return self.cache_data.update(data)
         else:
             return None
 
