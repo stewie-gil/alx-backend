@@ -6,6 +6,7 @@ It uses FIFO caching strategy
 
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """ FIFOClass """
 
