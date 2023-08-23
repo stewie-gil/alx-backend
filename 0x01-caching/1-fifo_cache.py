@@ -28,7 +28,7 @@ class FIFOCache(BaseCaching):
             self.order.pop(0)
 
     def get(self, key):
-k8        """ get the item based on the key """
+        """ get the item based on the key """
         if key is None:
             return None
         elif key not in self.cache_data:
