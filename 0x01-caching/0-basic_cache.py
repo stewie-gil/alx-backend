@@ -12,9 +12,9 @@ class BasicCache(BaseCaching):
     BasicCache inherits fro BaseCaching
     """
 
-    #def __init__(self):
+    # def __init__(self):
 #        """ initializing base_caching"""
-        #super().__init__()
+    # super().__init__()
 
     def put(self, key=None, item=None):
         """
@@ -33,8 +33,8 @@ class BasicCache(BaseCaching):
         Args: key - key used for retrieval
         return item based on the key
         """
-        if key is None:
-            return None
-        elif key not in self.cache_data:
-            return None
+        #if key is None:
+            #return None
+        #elif key not in self.cache_data:
+            #return None
         return self.cache_data.get(key)
