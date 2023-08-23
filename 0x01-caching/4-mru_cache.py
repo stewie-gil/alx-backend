@@ -23,15 +23,16 @@ class MRUCache(BaseCaching):
         """
         Adds key value items to a dictionary
         """
-        if key in self.key:
-            self.key.remove(key)
-        self.key.append(key)
-
-        self.cache_data[key] = item
         if key and item:
+            if key in self.key:
+                self.key.remove(key)
+            self.key.append(key)
+            self.cache_data[key] = item
+
+            
             if len(self.cache_data) > self.MAX_ITEMS:
                 to_discard = self.key[-2]
-                print("DISCARD: ", to_discard)
+                print("DISCARD: {}".format(to_discard))
                 del self.cache_data[to_discard]
 
     def get(self, key):

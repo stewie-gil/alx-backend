@@ -24,7 +24,7 @@ class LRUCache(BaseCaching):
         if key and item:
 
             if key in self.key:
-                self.key.remove(ke)
+                self.key.remove(key)
             self.key.append(key)
 
             self.cache_data[key] = item
