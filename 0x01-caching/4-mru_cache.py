@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-MRU caching
+This module contains the MRUcache module
 """
 
 
@@ -9,7 +9,7 @@ from base_caching import BaseCaching
 
 class MRUCache(BaseCaching):
     """
-    MRUCache
+    MRUCache inherits from BaseCaching
     """
 
     def __init__(self):
@@ -21,6 +21,7 @@ class MRUCache(BaseCaching):
 
     def put(self, key, item):
         """
+        Adds key value items to a dictionary
         """
         if key in self.key:
             self.key.remove(key)
@@ -35,6 +36,7 @@ class MRUCache(BaseCaching):
 
     def get(self, key):
         """
+        Returns the item based on the key provided
         """
         if key is None:
             return None

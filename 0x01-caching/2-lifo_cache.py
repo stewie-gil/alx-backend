@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-LIFOCache
+This module contains the LIFOCache class
 """
 
 
@@ -9,7 +9,7 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
     """
-    LIFOCache
+    LIFOCache inherits from BaseCaching
     """
 
     def __init__(self):
@@ -31,7 +31,7 @@ class LIFOCache(BaseCaching):
 
     def get(self, key):
         """
-        returns item
+        returns item based on the key
         """
         if key is None:
             return None

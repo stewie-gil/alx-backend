@@ -1,6 +1,6 @@
 #!/usr/bin/pthon3
 """
-LRUCache
+This module contains the LRUCache module
 """
 
 
@@ -16,6 +16,7 @@ class LRUCache(BaseCaching):
 
     def put(self, key, item):
         """ put function
+        Args: key and item  to add to the dict
         """
         if key in self.key:
             self.key.remove(key)
@@ -30,6 +31,9 @@ class LRUCache(BaseCaching):
                 self.key.remove(to_discard)
 
     def get(self, key):
+        """
+        Returns the item based on the key
+        """
         if key is None:
             return None
         if key not in self.cache_data:

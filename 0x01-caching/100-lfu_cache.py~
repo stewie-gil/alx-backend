@@ -8,6 +8,7 @@ from base_caching import BaseCaching
 class LFUCache(BaseCaching):
     """
     """
+
     def __init__(self):
         """
         """
@@ -24,13 +25,12 @@ class LFUCache(BaseCaching):
             self.keys.remove(key)
 
         self.keys.append(key)
-        
 
         if key and item:
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
                 to_discard = self.keys[0]
                 print("DISCARD: ", to_discard)
-                
+
     def get(self, key):
         if key is None:
             return None

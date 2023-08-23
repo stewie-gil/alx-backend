@@ -5,10 +5,12 @@ Module contains the BasicCache that inherits from BaseCaching
 
 from base_caching import BaseCaching
 
+
 class BasicCache(BaseCaching):
     """
     BasicCache inherits fro BaseCaching
     """
+
     def __init__(self):
         super().__init__()
 
@@ -21,5 +23,4 @@ class BasicCache(BaseCaching):
             return None
         elif key not in self.cache_data:
             return None
-        return self.cache_data[key] 
-        
+        return self.cache_data[key]

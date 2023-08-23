@@ -11,6 +11,7 @@ class LIFOCache(BaseCaching):
     """
     LIFOCache
     """
+
     def __init__(self):
         """init """
         super().__init__()
@@ -24,10 +25,11 @@ class LIFOCache(BaseCaching):
         self.key.append(key)
         if key or item is not None:
             if len(self.cache_data) > self.MAX_ITEMS:
-                print("cache_data: ",self.cache_data)
+                print("cache_data: ", self.cache_data)
                 to_delete = self.key[-2]
                 print("DISCARD: ", self.cache_data[to_delete])
                 del self.cache_data[to_delete]
+
     def get(self, key):
         """
         returns item
@@ -36,5 +38,5 @@ class LIFOCache(BaseCaching):
             return None
         if key not in self.cache_data:
             return None
-        
+
         return self.cache_data[key]
