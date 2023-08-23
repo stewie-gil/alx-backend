@@ -23,12 +23,15 @@ class FIFOCache(BaseCaching):
 
         if len(self.cache_data) > self.MAX_ITEMS:
             to_discard = self.order[0]
-            print("DISCARD", to_discard)
+            print("DISCARD:", to_discard)
+            print()
             del self.cache_data[to_discard]
             self.order.pop(0)
 
     def get(self, key):
         """ get the item based on the key """
-        if key is None or key not in self.cache_data:
+        if key is None:
+            return None
+        elif key not in self.cache_data:
             return None
         return self.cache_data[key]
