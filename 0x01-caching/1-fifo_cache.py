@@ -22,7 +22,7 @@ class FIFOCache(BaseCaching):
         Args: key - key to add to the cache_data dict
         item: item to store with the key
         """
-        if key or item is not None:
+        if key and item is not None:
             self.cache_data[key] = item
 
         if len(self.cache_data) > self.MAX_ITEMS:
