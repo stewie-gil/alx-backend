@@ -12,9 +12,9 @@ class BasicCache(BaseCaching):
     BasicCache inherits fro BaseCaching
     """
 
-    def __init__(self):
+    #def __init__(self):
         """ initializing base_caching"""
-        super().__init__()
+        #super().__init__()
 
     def put(self, key, item):
         """
