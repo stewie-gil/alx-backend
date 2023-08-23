@@ -21,11 +21,11 @@ class LIFOCache(BaseCaching):
         """
         deletes last item put in cache
         """
-        self.cache_data[key] = item
-        if key in self.key:
-            self.key.remove(key)
-        self.key.append(key)
-        if key or item is not None:
+        if key and item:
+            self.cache_data[key] = item
+            if key in self.key:
+                self.key.remove(key)
+            self.key.append(key)
             if len(self.cache_data) > self.MAX_ITEMS:
                 to_delete = self.key[-2]
                 print("DISCARD: {}".format(to_delete))
