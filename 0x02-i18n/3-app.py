@@ -33,7 +33,7 @@ def get_locale():
 @app.route("/")
 def index():
     """ serves 2-index.html file for route /"""
-    return render_template("templates/2-index.html")
+    return render_template("3-index.html")
 
 
 if __name__ == "__main__":

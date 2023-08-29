@@ -3,7 +3,7 @@
 
 
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _
 
 
 app = Flask(__name__)
@@ -27,6 +27,11 @@ def get_locale():
     """using request.accept_languages to determine the best
     match with supported languages
     """
+    requested_locale = request.args.get('locale')
+
+    if requested_locale in app.config['LANGUAGES']:
+        return requested_locale
+
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
@@ -34,7 +39,7 @@ def get_locale():
 def index():
     """ renders index.html with the new content"""
     return render_template(
-        "templates/3-index.html", title=_("home_title"), header=_("home_header"))
+        "3-index.html", title=_("home_title"), header=_("home_header"))
 
 
 if __name__ == "__main__":
