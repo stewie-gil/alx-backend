@@ -23,10 +23,10 @@ function setNewSchool(schoolName, value){
 function displaySchoolValue(schoolName){
     client.get(schoolName, (error, reply) => {
 	if(error){
-	    console.error(`Error getting value for ${schoolName}`);
+	    throw  error);
 	} else {
 
-	    console.log(`Value for ${schoolName}: ${reply}`);
+	    console.log(reply);
 	}
 
     });
